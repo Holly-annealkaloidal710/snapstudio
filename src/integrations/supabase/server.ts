@@ -1,7 +1,13 @@
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { type cookies } from 'next/headers'
+import { isDemoMode } from '@/lib/demo-mode'
+import { createMockSupabaseClient } from './mock-client'
 
 export function createSupabaseServerClient(cookieStorePromise: ReturnType<typeof cookies>) {
+  if (isDemoMode()) {
+    return createMockSupabaseClient() as any;
+  }
+
   return createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,

@@ -1,4 +1,5 @@
 import { getSupabaseClient } from '@/integrations/supabase/client';
+import { isDemoMode } from '@/lib/demo-mode';
 
 interface EdgeFunctionOptions {
   body?: any;
@@ -12,14 +13,21 @@ interface EdgeFunctionResponse<T = any> {
 
 export class EdgeFunctionClient {
   static async invoke<T = any>(
-    functionName: string, 
+    functionName: string,
     options: EdgeFunctionOptions = {}
   ): Promise<EdgeFunctionResponse<T>> {
+    if (isDemoMode()) {
+      return {
+        data: { success: true, message: 'Demo mode - edge function not called' } as any,
+        error: null,
+      };
+    }
+
     const supabase = getSupabaseClient();
     try {
       // Ensure we have a valid session
       const { data: { session }, error: sessionError } = await supabase.auth.getSession();
-      
+
       if (sessionError) {
         console.error('Session error:', sessionError);
         return {
@@ -60,7 +68,7 @@ export class EdgeFunctionClient {
                 ...options.headers
               }
             });
-            
+
             if (!retryError) {
               return { data: retryData, error: null };
             }
@@ -85,6 +93,13 @@ export class EdgeFunctionClient {
     requiredPoints: number,
     body: any
   ): Promise<EdgeFunctionResponse<T>> {
+    if (isDemoMode()) {
+      return {
+        data: { success: true, message: 'Demo mode - generation simulated' } as any,
+        error: null,
+      };
+    }
+
     const supabase = getSupabaseClient();
     try {
       const { data: { user } } = await supabase.auth.getUser();
@@ -116,6 +131,8 @@ export class EdgeFunctionClient {
   }
 
   static async isAuthenticated(): Promise<boolean> {
+    if (isDemoMode()) return true;
+
     const supabase = getSupabaseClient();
     try {
       const { data: { session } } = await supabase.auth.getSession();
