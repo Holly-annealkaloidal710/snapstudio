@@ -703,7 +703,7 @@ export default function EnhancedPricingPlans({
                       </p>
                     </div>
                     <p className="text-green-100">
-                      Từ hàng M VND VND xuống chỉ 12k VND cho 12 ảnh chuyên nghiệp
+                      From millions of VND down to just 12k VND for 12 professional images
                     </p>
                   </div>
                 </div>
@@ -716,10 +716,10 @@ export default function EnhancedPricingPlans({
         <div className="text-center mt-16">
           <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-2xl mx-auto border border-gray-100">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Cần tư vấn gói phù hợp cho doanh nghiệp?
+              Need help choosing the right plan for your business?
             </h3>
             <p className="text-gray-600 mb-6">
-              Đội ngũ SnapStudio sẽ phân tích nhu cầu và đề xuất gói cước tối ưu cho business model của bạn.
+              The SnapStudio team will analyze your needs and recommend the optimal plan for your business model.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -729,7 +729,7 @@ export default function EnhancedPricingPlans({
                 onClick={() => window.location.href = '/contact'}
               >
                 <CreditCard className="w-5 h-5 mr-2" />
-                Tư vấn miễn phí
+                Free Consultation
               </Button>
               <Button 
                 size="lg"

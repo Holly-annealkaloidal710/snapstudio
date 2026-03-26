@@ -21,17 +21,17 @@ const supabase = createSupabaseBrowserClient();
 
 const navigation = [
   { name: 'Dashboard', href: '/admin', icon: BarChart3 },
-  { name: 'Đơn hàng', href: '/admin/orders', icon: CreditCard },
-  { name: 'Người dùng', href: '/admin/users', icon: Users },
+  { name: 'Orders', href: '/admin/orders', icon: CreditCard },
+  { name: 'Users', href: '/admin/users', icon: Users },
   { name: 'Templates', href: '/admin/templates', icon: FileText },
-  { name: 'Ảnh Showcase', href: '/admin/image-showcase', icon: Palette },
-  { name: 'Ảnh đã tạo', href: '/admin/images', icon: Image },
+  { name: 'Image Showcase', href: '/admin/image-showcase', icon: Palette },
+  { name: 'Generated Images', href: '/admin/images', icon: Image },
   { name: 'Analytics', href: '/admin/analytics', icon: TrendingUp },
-  { name: 'Lợi nhuận', href: '/admin/profitability', icon: DollarSign },
-  { name: 'Hoạt động', href: '/admin/activity', icon: Activity },
-  { name: 'Cộng đồng', href: '/admin/community', icon: MessageSquare },
-  { name: 'Hệ thống', href: '/admin/system', icon: Database },
-  { name: 'Cài đặt', href: '/admin/settings', icon: Settings },
+  { name: 'Profitability', href: '/admin/profitability', icon: DollarSign },
+  { name: 'Activity', href: '/admin/activity', icon: Activity },
+  { name: 'Community', href: '/admin/community', icon: MessageSquare },
+  { name: 'System', href: '/admin/system', icon: Database },
+  { name: 'Settings', href: '/admin/settings', icon: Settings },
 ];
 
 function AdminSidebarContent() {
@@ -42,7 +42,7 @@ function AdminSidebarContent() {
   const handleLogout = async () => {
     const { error } = await supabase.auth.signOut();
     if (error) {
-      toast.error(error.message || "Đăng xuất thất bại");
+      toast.error(error.message || "Logout failed");
       return;
     }
     toast.success("Đã đăng xuất");
