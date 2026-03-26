@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 220" fill="none">
+  <defs>
+    <linearGradient id="wbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc"/>
+      <stop offset="100%" style="stop-color:#f1f5f9"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="220" rx="12" fill="url(#wbg)" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Step 1: Upload -->
+  <g transform="translate(50, 30)">
+    <rect width="170" height="160" rx="12" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+    <circle cx="85" cy="55" r="28" fill="url(#blue)" opacity="0.1"/>
+    <path d="M85 42 L85 68 M73 54 L85 42 L97 54" stroke="url(#blue)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="85" y="105" text-anchor="middle" fill="#1e293b" font-family="system-ui" font-size="14" font-weight="700">1. Upload</text>
+    <text x="85" y="125" text-anchor="middle" fill="#64748b" font-family="system-ui" font-size="11">Upload 1 product</text>
+    <text x="85" y="142" text-anchor="middle" fill="#64748b" font-family="system-ui" font-size="11">photo</text>
+    <!-- Step number -->
+    <circle cx="155" cy="15" r="14" fill="url(#blue)"/>
+    <text x="155" y="20" text-anchor="middle" fill="white" font-family="system-ui" font-size="12" font-weight="700">1</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <g transform="translate(235, 100)">
+    <path d="M0 10 L40 10" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6 4"/>
+    <path d="M35 4 L43 10 L35 16" stroke="#cbd5e1" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Step 2: Select -->
+  <g transform="translate(290, 30)">
+    <rect width="170" height="160" rx="12" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+    <circle cx="85" cy="55" r="28" fill="url(#purple)" opacity="0.1"/>
+    <rect x="68" y="40" width="14" height="14" rx="3" fill="none" stroke="url(#purple)" stroke-width="2.5"/>
+    <rect x="88" y="40" width="14" height="14" rx="3" fill="url(#purple)" opacity="0.6"/>
+    <rect x="68" y="58" width="14" height="14" rx="3" fill="url(#purple)" opacity="0.6"/>
+    <rect x="88" y="58" width="14" height="14" rx="3" fill="none" stroke="url(#purple)" stroke-width="2.5"/>
+    <text x="85" y="105" text-anchor="middle" fill="#1e293b" font-family="system-ui" font-size="14" font-weight="700">2. Configure</text>
+    <text x="85" y="125" text-anchor="middle" fill="#64748b" font-family="system-ui" font-size="11">Choose industry</text>
+    <text x="85" y="142" text-anchor="middle" fill="#64748b" font-family="system-ui" font-size="11">&amp; image styles</text>
+    <circle cx="155" cy="15" r="14" fill="url(#purple)"/>
+    <text x="155" y="20" text-anchor="middle" fill="white" font-family="system-ui" font-size="12" font-weight="700">2</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <g transform="translate(475, 100)">
+    <path d="M0 10 L40 10" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6 4"/>
+    <path d="M35 4 L43 10 L35 16" stroke="#cbd5e1" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Step 3: Generate -->
+  <g transform="translate(530, 30)">
+    <rect width="170" height="160" rx="12" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+    <circle cx="85" cy="55" r="28" fill="url(#green)" opacity="0.1"/>
+    <path d="M75 45 L75 65 L95 55 Z" fill="url(#green)" opacity="0.8"/>
+    <text x="85" y="105" text-anchor="middle" fill="#1e293b" font-family="system-ui" font-size="14" font-weight="700">3. Generate</text>
+    <text x="85" y="125" text-anchor="middle" fill="#64748b" font-family="system-ui" font-size="11">AI creates 12</text>
+    <text x="85" y="142" text-anchor="middle" fill="#64748b" font-family="system-ui" font-size="11">images in ~30s</text>
+    <circle cx="155" cy="15" r="14" fill="url(#green)"/>
+    <text x="155" y="20" text-anchor="middle" fill="white" font-family="system-ui" font-size="12" font-weight="700">3</text>
+  </g>
+
+  <!-- Arrow 3 -->
+  <g transform="translate(715, 100)">
+    <path d="M0 10 L40 10" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6 4"/>
+    <path d="M35 4 L43 10 L35 16" stroke="#cbd5e1" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Step 4: Download -->
+  <g transform="translate(770, 30)">
+    <rect width="170" height="160" rx="12" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+    <circle cx="85" cy="55" r="28" fill="url(#orange)" opacity="0.1"/>
+    <path d="M85 42 L85 68 M73 56 L85 68 L97 56" stroke="url(#orange)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="85" y="105" text-anchor="middle" fill="#1e293b" font-family="system-ui" font-size="14" font-weight="700">4. Download</text>
+    <text x="85" y="125" text-anchor="middle" fill="#64748b" font-family="system-ui" font-size="11">Download HD</text>
+    <text x="85" y="142" text-anchor="middle" fill="#64748b" font-family="system-ui" font-size="11">images &amp; share</text>
+    <circle cx="155" cy="15" r="14" fill="url(#orange)"/>
+    <text x="155" y="20" text-anchor="middle" fill="white" font-family="system-ui" font-size="12" font-weight="700">4</text>
+  </g>
+</svg>

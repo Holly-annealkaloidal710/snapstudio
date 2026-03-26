@@ -1,0 +1,1 @@
+SELECT auth.uid() as current_user_id, current_user, current_setting('request.jwt.claims', true) as jwt_claims;

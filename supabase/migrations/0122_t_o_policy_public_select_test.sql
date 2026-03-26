@@ -1,0 +1,1 @@
+CREATE POLICY "public_select" ON projects FOR SELECT USING (true);

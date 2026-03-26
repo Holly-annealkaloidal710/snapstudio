@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" fill="none">
+  <defs>
+    <linearGradient id="abg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="ablue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="apurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="agreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="aorange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="500" rx="12" fill="url(#abg)"/>
+
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui" font-size="20" font-weight="700">System Architecture</text>
+
+  <!-- Frontend Layer -->
+  <g transform="translate(30, 65)">
+    <rect width="840" height="110" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <text x="20" y="25" fill="#94a3b8" font-family="system-ui" font-size="11" font-weight="600" text-transform="uppercase" letter-spacing="1">FRONTEND</text>
+
+    <g transform="translate(20, 40)">
+      <rect width="150" height="55" rx="8" fill="#172554" stroke="#2563eb" stroke-width="1.5"/>
+      <text x="75" y="25" text-anchor="middle" fill="#60a5fa" font-family="system-ui" font-size="12" font-weight="700">Next.js 15</text>
+      <text x="75" y="42" text-anchor="middle" fill="#3b82f6" font-family="system-ui" font-size="10" opacity="0.7">App Router + SSR</text>
+    </g>
+
+    <g transform="translate(185, 40)">
+      <rect width="150" height="55" rx="8" fill="#172554" stroke="#2563eb" stroke-width="1.5"/>
+      <text x="75" y="25" text-anchor="middle" fill="#60a5fa" font-family="system-ui" font-size="12" font-weight="700">Shadcn/UI</text>
+      <text x="75" y="42" text-anchor="middle" fill="#3b82f6" font-family="system-ui" font-size="10" opacity="0.7">Radix + Tailwind</text>
+    </g>
+
+    <g transform="translate(350, 40)">
+      <rect width="150" height="55" rx="8" fill="#172554" stroke="#2563eb" stroke-width="1.5"/>
+      <text x="75" y="25" text-anchor="middle" fill="#60a5fa" font-family="system-ui" font-size="12" font-weight="700">TypeScript</text>
+      <text x="75" y="42" text-anchor="middle" fill="#3b82f6" font-family="system-ui" font-size="10" opacity="0.7">Strict typing</text>
+    </g>
+
+    <g transform="translate(515, 40)">
+      <rect width="150" height="55" rx="8" fill="#172554" stroke="#2563eb" stroke-width="1.5"/>
+      <text x="75" y="25" text-anchor="middle" fill="#60a5fa" font-family="system-ui" font-size="12" font-weight="700">React Hook Form</text>
+      <text x="75" y="42" text-anchor="middle" fill="#3b82f6" font-family="system-ui" font-size="10" opacity="0.7">+ Zod validation</text>
+    </g>
+
+    <g transform="translate(680, 40)">
+      <rect width="140" height="55" rx="8" fill="#172554" stroke="#2563eb" stroke-width="1.5"/>
+      <text x="70" y="25" text-anchor="middle" fill="#60a5fa" font-family="system-ui" font-size="12" font-weight="700">Recharts</text>
+      <text x="70" y="42" text-anchor="middle" fill="#3b82f6" font-family="system-ui" font-size="10" opacity="0.7">Data visualization</text>
+    </g>
+  </g>
+
+  <!-- Connection arrows -->
+  <g>
+    <path d="M450 178 L450 200" stroke="#475569" stroke-width="2" stroke-dasharray="4 3"/>
+    <circle cx="450" cy="200" r="3" fill="#475569"/>
+  </g>
+
+  <!-- Backend Layer -->
+  <g transform="translate(30, 205)">
+    <rect width="840" height="110" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <text x="20" y="25" fill="#94a3b8" font-family="system-ui" font-size="11" font-weight="600" letter-spacing="1">BACKEND - SUPABASE</text>
+
+    <g transform="translate(20, 40)">
+      <rect width="150" height="55" rx="8" fill="#1a2e1a" stroke="#22c55e" stroke-width="1.5"/>
+      <text x="75" y="25" text-anchor="middle" fill="#86efac" font-family="system-ui" font-size="12" font-weight="700">PostgreSQL</text>
+      <text x="75" y="42" text-anchor="middle" fill="#22c55e" font-family="system-ui" font-size="10" opacity="0.7">Database + RLS</text>
+    </g>
+
+    <g transform="translate(185, 40)">
+      <rect width="150" height="55" rx="8" fill="#1a2e1a" stroke="#22c55e" stroke-width="1.5"/>
+      <text x="75" y="25" text-anchor="middle" fill="#86efac" font-family="system-ui" font-size="12" font-weight="700">Auth</text>
+      <text x="75" y="42" text-anchor="middle" fill="#22c55e" font-family="system-ui" font-size="10" opacity="0.7">Authentication</text>
+    </g>
+
+    <g transform="translate(350, 40)">
+      <rect width="150" height="55" rx="8" fill="#1a2e1a" stroke="#22c55e" stroke-width="1.5"/>
+      <text x="75" y="25" text-anchor="middle" fill="#86efac" font-family="system-ui" font-size="12" font-weight="700">Edge Functions</text>
+      <text x="75" y="42" text-anchor="middle" fill="#22c55e" font-family="system-ui" font-size="10" opacity="0.7">Deno serverless</text>
+    </g>
+
+    <g transform="translate(515, 40)">
+      <rect width="150" height="55" rx="8" fill="#1a2e1a" stroke="#22c55e" stroke-width="1.5"/>
+      <text x="75" y="25" text-anchor="middle" fill="#86efac" font-family="system-ui" font-size="12" font-weight="700">Storage</text>
+      <text x="75" y="42" text-anchor="middle" fill="#22c55e" font-family="system-ui" font-size="10" opacity="0.7">Image CDN</text>
+    </g>
+
+    <g transform="translate(680, 40)">
+      <rect width="140" height="55" rx="8" fill="#1a2e1a" stroke="#22c55e" stroke-width="1.5"/>
+      <text x="70" y="25" text-anchor="middle" fill="#86efac" font-family="system-ui" font-size="12" font-weight="700">Realtime</text>
+      <text x="70" y="42" text-anchor="middle" fill="#22c55e" font-family="system-ui" font-size="10" opacity="0.7">Live updates</text>
+    </g>
+  </g>
+
+  <!-- Connection arrows -->
+  <g>
+    <path d="M450 318 L450 340" stroke="#475569" stroke-width="2" stroke-dasharray="4 3"/>
+    <circle cx="450" cy="340" r="3" fill="#475569"/>
+  </g>
+
+  <!-- AI + Services Layer -->
+  <g transform="translate(30, 345)">
+    <rect width="840" height="110" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <text x="20" y="25" fill="#94a3b8" font-family="system-ui" font-size="11" font-weight="600" letter-spacing="1">AI &amp; EXTERNAL SERVICES</text>
+
+    <g transform="translate(20, 40)">
+      <rect width="190" height="55" rx="8" fill="#2d1f3d" stroke="#a855f7" stroke-width="1.5"/>
+      <text x="95" y="25" text-anchor="middle" fill="#d8b4fe" font-family="system-ui" font-size="12" font-weight="700">Gemini AI</text>
+      <text x="95" y="42" text-anchor="middle" fill="#a855f7" font-family="system-ui" font-size="10" opacity="0.7">Image generation engine</text>
+    </g>
+
+    <g transform="translate(230, 40)">
+      <rect width="190" height="55" rx="8" fill="#332b1a" stroke="#f59e0b" stroke-width="1.5"/>
+      <text x="95" y="25" text-anchor="middle" fill="#fcd34d" font-family="system-ui" font-size="12" font-weight="700">SePay</text>
+      <text x="95" y="42" text-anchor="middle" fill="#f59e0b" font-family="system-ui" font-size="10" opacity="0.7">Payment gateway (VN)</text>
+    </g>
+
+    <g transform="translate(440, 40)">
+      <rect width="190" height="55" rx="8" fill="#1a2020" stroke="#6b7280" stroke-width="1.5"/>
+      <text x="95" y="25" text-anchor="middle" fill="#d1d5db" font-family="system-ui" font-size="12" font-weight="700">Vercel</text>
+      <text x="95" y="42" text-anchor="middle" fill="#6b7280" font-family="system-ui" font-size="10" opacity="0.7">Hosting &amp; deployment</text>
+    </g>
+
+    <g transform="translate(650, 40)">
+      <rect width="190" height="55" rx="8" fill="#1c1917" stroke="#78716c" stroke-width="1.5"/>
+      <text x="95" y="25" text-anchor="middle" fill="#d6d3d1" font-family="system-ui" font-size="12" font-weight="700">pg_cron</text>
+      <text x="95" y="42" text-anchor="middle" fill="#78716c" font-family="system-ui" font-size="10" opacity="0.7">Scheduled jobs</text>
+    </g>
+  </g>
+
+  <!-- Bottom label -->
+  <text x="450" y="485" text-anchor="middle" fill="#475569" font-family="system-ui" font-size="11">SnapStudio - Full-stack AI Product Image Generation Platform</text>
+</svg>

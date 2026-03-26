@@ -1,0 +1,237 @@
+import { PageLayout } from '@/components/layout/page-layout';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { CheckCircle, Building2, ArrowRight, LogIn, Crown, TrendingUp } from 'lucide-react';
+import SampleOutputsGrid from '@/components/sample-outputs-grid';
+import { cn } from '@/lib/utils';
+import { generatePageMetadata, industryMetadata } from '@/lib/metadata';
+
+export const metadata = generatePageMetadata({
+  ...industryMetadata.beauty,
+  path: "/beauty-personal-care"
+});
+
+export default function BeautyPersonalCarePage() {
+  const benefits = [
+    "Ảnh sản phẩm luxury với ánh sáng mềm mại, phản chiếu tinh tế",
+    "Model apply sản phẩm tự nhiên, showcase hiệu quả sử dụng",
+    "Content beauty campaign với aesthetic cao cho social",
+    "UGC content chân thực như review khách hàng"
+  ];
+
+  const beautyCategories = [
+    { name: "Skincare", examples: "Serum, kem dưỡng, mặt nạ" },
+    { name: "Makeup", examples: "Son môi, phấn mắt, foundation" },
+    { name: "Haircare", examples: "Dầu gội, dưỡng tóc, styling" },
+    { name: "Fragrance", examples: "Nước hoa, body mist, perfume" }
+  ];
+
+  const pricingHighlight = [
+    { plan: "Starter", price: "99k", images: "10 sản phẩm", best: false },
+    { plan: "Pro", price: "528k", images: "41 sản phẩm", best: true },
+    { plan: "Business", price: "1.58M", images: "125 sản phẩm", best: false }
+  ];
+
+  const beforeAfter = [
+    { aspect: "Chi phí chụp", before: "5-15 triệu", after: "12k VND", saving: "99.9%" },
+    { aspect: "Thời gian", before: "3-5 ngày", after: "30 giây", saving: "99.8%" },
+    { aspect: "Số ảnh", before: "5-8 ảnh", after: "12 ảnh", saving: "+50%" },
+    { aspect: "Chất lượng", before: "Không ổn định", after: "Consistent", saving: "100%" }
+  ];
+
+  return (
+    <PageLayout
+      title="Tạo ảnh Beauty & Personal Care bằng AI"
+      subtitle="Prompt chuyên biệt cho mỹ phẩm — Luxury aesthetic, model application, skincare campaigns"
+    >
+      <div className="space-y-16">
+        {/* Hero Benefits */}
+        <div className="bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-8 border border-pink-100">
+          <div className="text-center mb-8">
+            <div className="w-20 h-20 bg-gradient-to-br from-pink-500 to-purple-500 rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-lg">
+              <Building2 className="w-10 h-10 text-white" />
+            </div>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              AI chuyên biệt cho Beauty & Personal Care
+            </h2>
+            <p className="text-xl text-gray-600">
+              Prompt tối ưu cho luxury aesthetic, skin glow và beauty application
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-pink-500 mt-1 flex-shrink-0" />
+                <p className="text-gray-700">{benefit}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Beauty Categories */}
+        <div>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            Phù hợp cho mọi sản phẩm Beauty
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {beautyCategories.map((category, index) => (
+              <Card key={index} className="border-pink-200 hover:shadow-lg transition-shadow">
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 bg-pink-100 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                    <Building2 className="w-6 h-6 text-pink-600" />
+                  </div>
+                  <h3 className="font-bold text-gray-900 mb-2">{category.name}</h3>
+                  <p className="text-gray-600 text-sm">{category.examples}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Sample Outputs */}
+        <div>
+          <SampleOutputsGrid
+            title="Ví dụ ảnh Beauty được tạo bởi SnapStudio"
+            subtitle="Luxury display • Model application • Beauty campaigns • UGC reviews"
+          />
+        </div>
+
+        {/* Comparison Table */}
+        <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            So sánh: Studio vs SnapStudio AI
+          </h2>
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="bg-gradient-to-r from-pink-500 to-purple-500 text-white">
+                  <th className="p-4 text-left rounded-tl-lg">Tiêu chí</th>
+                  <th className="p-4 text-left">Studio truyền thống</th>
+                  <th className="p-4 text-left">SnapStudio AI</th>
+                  <th className="p-4 text-left rounded-tr-lg">Tiết kiệm</th>
+                </tr>
+              </thead>
+              <tbody>
+                {beforeAfter.map((row, index) => (
+                  <tr key={index} className={index % 2 === 0 ? 'bg-pink-50' : 'bg-white'}>
+                    <td className="p-4 font-medium text-gray-900">{row.aspect}</td>
+                    <td className="p-4 text-gray-600">{row.before}</td>
+                    <td className="p-4 text-pink-600 font-semibold">{row.after}</td>
+                    <td className="p-4 text-green-600 font-bold">{row.saving}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Clean Pricing */}
+        <div className="bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-8 border border-pink-100">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Bảng giá cho Beauty Brands
+            </h2>
+            <p className="text-lg text-gray-600">
+              Tính theo số sản phẩm mỹ phẩm/tháng
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            {pricingHighlight.map((plan, index) => (
+              <Card key={index} className={cn(
+                "border-2 transition-all hover:scale-105",
+                plan.best ? "border-pink-500 shadow-lg" : "border-gray-200"
+              )}>
+                <CardContent className="p-6 text-center">
+                  {plan.best && (
+                    <Badge className="bg-pink-500 text-white mb-4">
+                      PHỔ BIẾN
+                    </Badge>
+                  )}
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{plan.plan}</h3>
+                  <div className="text-2xl font-bold text-pink-600 mb-2">{plan.price}</div>
+                  <p className="text-gray-600 mb-4">{plan.images}</p>
+                  <Button 
+                    className={cn(
+                      "w-full auth-trigger",
+                      plan.best 
+                        ? "bg-pink-500 hover:bg-pink-600" 
+                        : "bg-gray-900 hover:bg-gray-800"
+                    )}
+                  >
+                    Chọn {plan.plan}
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          
+          <div className="text-center">
+            <p className="text-gray-600 mb-6">
+              <strong>Mỗi sản phẩm</strong> = 12 ảnh (Studio luxury, Model application, Social campaign, UGC review)
+            </p>
+            <Button size="lg" className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white auth-trigger">
+              <Crown className="w-5 h-5 mr-2" />
+              Bắt đầu tạo ảnh Beauty
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </div>
+        </div>
+
+        {/* Success Stories */}
+        <div>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            Beauty brands thành công với SnapStudio
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Card className="border-pink-200">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center">
+                    <Building2 className="w-6 h-6 text-pink-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-gray-900">Skincare Brand X</h3>
+                    <p className="text-sm text-gray-600">Startup mỹ phẩm</p>
+                  </div>
+                </div>
+                <p className="text-gray-700 mb-4">
+                  "Từ khi dùng SnapStudio, tiết kiệm 90% budget chụp ảnh. 
+                  Conversion rate tăng 180% nhờ ảnh đẹp và consistent."
+                </p>
+                <div className="flex gap-2">
+                  <Badge className="bg-green-100 text-green-700">+180% conversion</Badge>
+                  <Badge className="bg-blue-100 text-blue-700">-90% cost</Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-purple-200">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                    <Building2 className="w-6 h-6 text-purple-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-gray-900">Makeup Brand Y</h3>
+                    <p className="text-sm text-gray-600">Thương hiệu makeup</p>
+                  </div>
+                </div>
+                <p className="text-gray-700 mb-4">
+                  "12 ảnh/sản phẩm với đủ style cho mọi platform. 
+                  Content calendar không bao giờ thiếu ảnh đẹp!"
+                </p>
+                <div className="flex gap-2">
+                  <Badge className="bg-purple-100 text-purple-700">12 styles</Badge>
+                  <Badge className="bg-orange-100 text-orange-700">All platforms</Badge>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </PageLayout>
+  );
+}

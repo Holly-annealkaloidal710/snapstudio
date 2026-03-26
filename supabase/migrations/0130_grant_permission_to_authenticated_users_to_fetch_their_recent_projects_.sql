@@ -1,0 +1,1 @@
+GRANT EXECUTE ON FUNCTION public.get_recent_projects_with_thumbnails(p_user_id uuid) TO authenticated;

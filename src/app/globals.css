@@ -1,0 +1,482 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.75rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+  
+  h1 {
+    @apply text-4xl lg:text-5xl;
+  }
+  
+  h2 {
+    @apply text-3xl lg:text-4xl;
+  }
+  
+  h3 {
+    @apply text-2xl lg:text-3xl;
+  }
+  
+  p {
+    @apply leading-7;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent;
+  }
+  
+  .gradient-bg {
+    @apply bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50;
+  }
+  
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-md border border-white/20;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-gray-900 border-2 border-gray-200 hover:border-gray-300 hover:bg-gray-50 font-semibold px-6 py-3 rounded-xl transition-all duration-300;
+  }
+  
+  .section-padding {
+    @apply py-16 lg:py-24;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Enhanced pricing card styles */
+  .pricing-card-starter {
+    @apply bg-gradient-to-br from-yellow-50 to-orange-50 border-yellow-200;
+  }
+  
+  .pricing-card-pro {
+    @apply bg-gradient-to-br from-blue-50 via-purple-50 to-blue-50 border-blue-300;
+  }
+  
+  .pricing-card-business {
+    @apply bg-gradient-to-br from-purple-50 to-indigo-50 border-purple-300;
+  }
+  
+  .pricing-card-enterprise {
+    @apply bg-gradient-to-br from-gray-50 to-slate-50 border-gray-400;
+  }
+
+  /* Payment status styles */
+  .payment-step-completed {
+    @apply bg-green-500 text-white;
+  }
+  
+  .payment-step-current {
+    @apply bg-blue-500 text-white animate-pulse;
+  }
+  
+  .payment-step-pending {
+    @apply bg-gray-200 text-gray-500;
+  }
+}
+
+@layer utilities {
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+
+  .animation-delay-1000 {
+    animation-delay: 1000ms;
+  }
+}
+
+/* Custom animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in-down {
+  animation: fade-in-down 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-gradient-x {
+  animation: gradient-x 3s ease infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.6s ease-out forwards;
+}
+
+/* Enhanced hover effects */
+.hover-lift {
+  @apply transition-all duration-300 hover:shadow-2xl hover:-translate-y-2;
+}
+
+.hover-glow {
+  @apply transition-all duration-300 hover:shadow-xl;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+}
+
+/* Pricing card specific animations */
+.pricing-card {
+  @apply transition-all duration-500 hover:scale-105;
+}
+
+.pricing-card-popular {
+  @apply transform scale-105;
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Payment flow animations */
+.payment-success-enter {
+  animation: bounce-in 0.8s ease-out forwards;
+}
+
+.payment-processing {
+  @apply animate-pulse;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}
+
+/* Focus styles */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+}
+
+/* Loading spinner */
+.spinner {
+  @apply animate-spin rounded-full border-2 border-gray-300 border-t-blue-600;
+}
+
+/* Enhanced button styles */
+.btn-gradient-primary {
+  @apply bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105;
+}
+
+.btn-gradient-success {
+  @apply bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300;
+}
+
+.btn-gradient-warning {
+  @apply bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300;
+}
+
+/* Status indicators */
+.status-success {
+  @apply bg-green-100 text-green-800 border border-green-200;
+}
+
+.status-warning {
+  @apply bg-yellow-100 text-yellow-800 border border-yellow-200;
+}
+
+.status-error {
+  @apply bg-red-100 text-red-800 border border-red-200;
+}
+
+.status-info {
+  @apply bg-blue-100 text-blue-800 border border-blue-200;
+}
+
+/* Enhanced card styles */
+.card-premium {
+  @apply bg-gradient-to-br from-white to-gray-50 border-2 border-gray-200 shadow-xl;
+}
+
+.card-popular {
+  @apply bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-blue-300 shadow-2xl;
+}
+
+.card-enterprise {
+  @apply bg-gradient-to-br from-gray-50 to-slate-100 border-2 border-gray-400 shadow-xl;
+}
+
+/* Notification styles */
+.notification-success {
+  @apply bg-green-50 border-green-200 text-green-800;
+}
+
+.notification-error {
+  @apply bg-red-50 border-red-200 text-red-800;
+}
+
+.notification-warning {
+  @apply bg-yellow-50 border-yellow-200 text-yellow-800;
+}
+
+.notification-info {
+  @apply bg-blue-50 border-blue-200 text-blue-800;
+}
+
+/* Interactive elements */
+.interactive-hover {
+  @apply transition-all duration-200 hover:bg-gray-50 hover:shadow-md cursor-pointer;
+}
+
+.interactive-active {
+  @apply bg-blue-50 border-blue-200 shadow-md;
+}
+
+/* Payment specific styles */
+.qr-container {
+  @apply bg-white p-6 rounded-xl shadow-lg border-2 border-gray-100;
+}
+
+.payment-info-card {
+  @apply bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-xl p-4;
+}
+
+.copy-button {
+  @apply transition-all duration-200 hover:bg-gray-100 active:scale-95;
+}
+
+.copy-button-success {
+  @apply bg-green-100 text-green-600;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .pricing-card {
+    @apply transform-none hover:scale-100;
+  }
+  
+  .hover-lift {
+    @apply hover:translate-y-0 hover:shadow-lg;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
