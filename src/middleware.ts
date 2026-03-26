@@ -8,6 +8,15 @@ export async function middleware(request: NextRequest) {
     },
   })
 
+  // Skip Supabase session refresh in demo mode
+  if (
+    !process.env.NEXT_PUBLIC_SUPABASE_URL ||
+    !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+    process.env.NEXT_PUBLIC_SUPABASE_URL === 'https://your-project-ref.supabase.co'
+  ) {
+    return response
+  }
+
   try {
     const supabase = createServerClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,

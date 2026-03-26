@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useEffect, useState, ReactNode, useCallback } from 'react';
 import { getSupabaseClient } from '@/integrations/supabase/client';
+import { isDemoMode, DEMO_USER, DEMO_PROFILE } from '@/lib/demo-mode';
 import type { User, SupabaseClient, AuthChangeEvent, Session } from '@supabase/supabase-js';
 import { useRouter } from 'next/navigation';
 
@@ -73,8 +74,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     const initializeAuth = async () => {
       try {
+        // Demo mode: use mock user and profile immediately
+        if (isDemoMode()) {
+          if (mounted) {
+            setUser(DEMO_USER as any);
+            setProfile(DEMO_PROFILE as Profile);
+            setLoading(false);
+            setInitialized(true);
+          }
+          return;
+        }
+
         const { data: { session }, error } = await supabase.auth.getSession();
-        
+
         if (!mounted) return;
 
         if (error) {
@@ -104,6 +116,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     initializeAuth();
 
+    // Skip auth listener in demo mode
+    if (isDemoMode()) {
+      return;
+    }
+
     // Listen for auth changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event: AuthChangeEvent, session: Session | null) => {
@@ -126,7 +143,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           setUser(null);
           setProfile(null);
         }
-        
+
         setLoading(false);
       }
     );
@@ -138,6 +155,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [supabase, loadProfile, initialized]);
 
   const refreshProfile = useCallback(async () => {
+    if (isDemoMode()) return;
     if (user) {
       await loadProfile(user);
     }

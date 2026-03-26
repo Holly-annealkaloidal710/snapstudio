@@ -105,51 +105,100 @@ supabase/
 
 - [Node.js](https://nodejs.org/) 18+
 - [pnpm](https://pnpm.io/) package manager
-- A [Supabase](https://supabase.com/) project
-- [Gemini API key](https://ai.google.dev/)
 
-### 1. Clone the repository
+### 1. Clone & Install
 
 ```bash
 git clone https://github.com/ungden/snapstudio.git
 cd snapstudio
-```
-
-### 2. Install dependencies
-
-```bash
 pnpm install
 ```
 
-### 3. Set up environment variables
-
-```bash
-cp .env.example .env.local
-```
-
-```env
-NEXT_PUBLIC_SUPABASE_URL=https://your-project-ref.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
-SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
-GEMINI_API_KEY=your-gemini-api-key
-SEPAY_WEBHOOK_API_KEY=your-sepay-webhook-key
-```
-
-### 4. Set up Supabase
-
-```bash
-npx supabase db push
-```
-
-> **Note**: Migration files contain placeholder emails (`your-admin@example.com`). Update with your actual admin email before running.
-
-### 5. Run the development server
+### 2. Run in Demo Mode (no backend needed)
 
 ```bash
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3000](http://localhost:3000). The app runs with **mock data** out of the box - no Supabase, no API keys required. You can explore the full UI, dashboard, community pages, and admin panel with demo user data.
+
+> **Demo mode** is active when `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` are not set (or still have placeholder values from `.env.example`).
+
+---
+
+### 3. Full Setup (connect your own Supabase)
+
+To enable real authentication, database, AI generation, and payments, follow these steps:
+
+#### 3a. Create a Supabase project
+
+1. Go to [supabase.com](https://supabase.com/) and create a new project
+2. Go to **Settings > API** and copy:
+   - **Project URL** (`https://xxxxx.supabase.co`)
+   - **anon public key**
+   - **service_role secret key**
+
+#### 3b. Set up environment variables
+
+```bash
+cp .env.example .env.local
+```
+
+Edit `.env.local` with your real values:
+
+```env
+# Supabase (required for auth & database)
+NEXT_PUBLIC_SUPABASE_URL=https://your-project-ref.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+
+# AI Image Generation (required for generating images)
+GEMINI_API_KEY=your-gemini-api-key
+
+# Payment - SePay (optional, for VN bank transfer payments)
+SEPAY_WEBHOOK_API_KEY=your-sepay-webhook-key
+```
+
+#### 3c. Apply database migrations
+
+```bash
+npx supabase link --project-ref your-project-ref
+npx supabase db push
+```
+
+> **Note**: Migration files contain placeholder emails (`your-admin@example.com`). Update with your actual admin email before running.
+
+#### 3d. Deploy Edge Functions (for AI generation)
+
+```bash
+npx supabase functions deploy generate-images
+npx supabase functions deploy generate-solo-image
+npx supabase functions deploy process-batch-generation
+npx supabase functions deploy create-order
+npx supabase functions deploy confirm-payment
+# ... deploy other functions as needed (see Edge Functions table below)
+```
+
+Set secrets for Edge Functions:
+
+```bash
+npx supabase secrets set GEMINI_API_KEY=your-gemini-api-key
+npx supabase secrets set SEPAY_WEBHOOK_API_KEY=your-sepay-webhook-key
+```
+
+#### 3e. Run the development server
+
+```bash
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+### Deploying to Vercel
+
+1. Import the repo on [vercel.com](https://vercel.com/)
+2. Add all environment variables from `.env.local` to **Settings > Environment Variables**
+3. Deploy. Vercel will auto-detect Next.js and build.
 
 ## Scripts
 

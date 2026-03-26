@@ -1,4 +1,5 @@
 import { createSupabaseBrowserClient } from '@/integrations/supabase/client';
+import { isDemoMode } from '@/lib/demo-mode';
 import { toast } from 'sonner';
 
 const supabase = createSupabaseBrowserClient();
@@ -36,10 +37,15 @@ export class ImageGenerator {
   }
 
   static async downloadImage(imageUrl: string, filename: string): Promise<void> {
+    if (isDemoMode()) {
+      toast.info('Demo mode: tải ảnh không khả dụng');
+      return;
+    }
+
     try {
       const response = await fetch(imageUrl);
       const blob = await response.blob();
-      
+
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
@@ -55,6 +61,11 @@ export class ImageGenerator {
   }
 
   static async downloadAllImages(images: GeneratedImage[], productName: string): Promise<void> {
+    if (isDemoMode()) {
+      toast.info('Demo mode: tải ảnh không khả dụng');
+      return;
+    }
+
     try {
       for (const image of images) {
         const filename = `${productName}_${image.image_type}_${image.style_name}.png`;
@@ -69,6 +80,8 @@ export class ImageGenerator {
   }
 
   static async toggleFavorite(imageId: string, currentFavorite: boolean): Promise<void> {
+    if (isDemoMode()) return;
+
     try {
       const { error } = await supabase
         .from('generated_images')
@@ -86,6 +99,8 @@ export class ImageGenerator {
   }
 
   static async incrementDownloadCount(imageId: string): Promise<void> {
+    if (isDemoMode()) return;
+
     try {
       const { error } = await supabase.rpc('increment_download_count', {
         image_id: imageId
