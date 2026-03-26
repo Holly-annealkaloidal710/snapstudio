@@ -625,7 +625,7 @@ export default function EnhancedPricingPlans({
                      industryFilter === 'mother_baby' ? '👶' : '📱'}
                   </div>
                   <h3 className="text-3xl font-bold text-gray-900 mb-6">
-                    ROI Calculator cho ngành {industryFilter === 'f_b' ? 'F&B' : 
+                    ROI Calculator for {industryFilter === 'f_b' ? 'F&B' : 
                                               industryFilter === 'beauty' ? 'Beauty' :
                                               industryFilter === 'fashion' ? 'Fashion' :
                                               industryFilter === 'mother_baby' ? 'Mom&Baby' : 'Tech'}
@@ -633,51 +633,51 @@ export default function EnhancedPricingPlans({
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                     <div className="bg-white rounded-xl p-6 shadow-lg">
-                      <h4 className="font-bold text-gray-900 mb-4 text-xl">Studio truyền thống</h4>
+                      <h4 className="font-bold text-gray-900 mb-4 text-xl">Traditional Studio</h4>
                       <div className="space-y-3 text-gray-600">
                         {industryFilter === 'f_b' && (
                           <>
-                            <div className="flex justify-between"><span>Photographer:</span><span className="font-semibold">3-8 triệu/buổi</span></div>
-                            <div className="flex justify-between"><span>Food styling:</span><span className="font-semibold">1-3 triệu</span></div>
+                            <div className="flex justify-between"><span>Photographer:</span><span className="font-semibold">3-8 M VND/session</span></div>
+                            <div className="flex justify-between"><span>Food styling:</span><span className="font-semibold">1-3 M VND</span></div>
                             <div className="flex justify-between"><span>Studio rent:</span><span className="font-semibold">500k-2M/ngày</span></div>
                             <div className="flex justify-between"><span>Props & setup:</span><span className="font-semibold">500k-1M</span></div>
-                            <div className="border-t pt-3 flex justify-between text-lg"><span className="font-bold">Tổng:</span><span className="font-bold text-red-600">5-14 triệu</span></div>
+                            <div className="border-t pt-3 flex justify-between text-lg"><span className="font-bold">Total:</span><span className="font-bold text-red-600">5-14 M VND</span></div>
                           </>
                         )}
                         {industryFilter === 'beauty' && (
                           <>
-                            <div className="flex justify-between"><span>Beauty photographer:</span><span className="font-semibold">5-15 triệu/buổi</span></div>
-                            <div className="flex justify-between"><span>Makeup artist:</span><span className="font-semibold">2-5 triệu</span></div>
-                            <div className="flex justify-between"><span>Model:</span><span className="font-semibold">2-8 triệu</span></div>
-                            <div className="flex justify-between"><span>Studio & lighting:</span><span className="font-semibold">1-3 triệu</span></div>
-                            <div className="border-t pt-3 flex justify-between text-lg"><span className="font-bold">Tổng:</span><span className="font-bold text-red-600">10-31 triệu</span></div>
+                            <div className="flex justify-between"><span>Beauty photographer:</span><span className="font-semibold">5-15 M VND/session</span></div>
+                            <div className="flex justify-between"><span>Makeup artist:</span><span className="font-semibold">2-5 M VND</span></div>
+                            <div className="flex justify-between"><span>Model:</span><span className="font-semibold">2-8 M VND</span></div>
+                            <div className="flex justify-between"><span>Studio & lighting:</span><span className="font-semibold">1-3 M VND</span></div>
+                            <div className="border-t pt-3 flex justify-between text-lg"><span className="font-bold">Total:</span><span className="font-bold text-red-600">10-31 M VND</span></div>
                           </>
                         )}
                         {industryFilter === 'fashion' && (
                           <>
-                            <div className="flex justify-between"><span>Fashion photographer:</span><span className="font-semibold">8-20 triệu/buổi</span></div>
-                            <div className="flex justify-between"><span>Model:</span><span className="font-semibold">3-10 triệu</span></div>
-                            <div className="flex justify-between"><span>Stylist:</span><span className="font-semibold">2-5 triệu</span></div>
-                            <div className="flex justify-between"><span>Location/Studio:</span><span className="font-semibold">1-5 triệu</span></div>
-                            <div className="border-t pt-3 flex justify-between text-lg"><span className="font-bold">Tổng:</span><span className="font-bold text-red-600">14-40 triệu</span></div>
+                            <div className="flex justify-between"><span>Fashion photographer:</span><span className="font-semibold">8-20 M VND/session</span></div>
+                            <div className="flex justify-between"><span>Model:</span><span className="font-semibold">3-10 M VND</span></div>
+                            <div className="flex justify-between"><span>Stylist:</span><span className="font-semibold">2-5 M VND</span></div>
+                            <div className="flex justify-between"><span>Location/Studio:</span><span className="font-semibold">1-5 M VND</span></div>
+                            <div className="border-t pt-3 flex justify-between text-lg"><span className="font-bold">Total:</span><span className="font-bold text-red-600">14-40 M VND</span></div>
                           </>
                         )}
                         {industryFilter === 'mother_baby' && (
                           <>
-                            <div className="flex justify-between"><span>Baby photographer:</span><span className="font-semibold">5-12 triệu/buổi</span></div>
-                            <div className="flex justify-between"><span>Baby model:</span><span className="font-semibold">2-5 triệu</span></div>
-                            <div className="flex justify-between"><span>Props & safety:</span><span className="font-semibold">1-3 triệu</span></div>
-                            <div className="flex justify-between"><span>Studio setup:</span><span className="font-semibold">1-2 triệu</span></div>
-                            <div className="border-t pt-3 flex justify-between text-lg"><span className="font-bold">Tổng:</span><span className="font-bold text-red-600">9-22 triệu</span></div>
+                            <div className="flex justify-between"><span>Baby photographer:</span><span className="font-semibold">5-12 M VND/session</span></div>
+                            <div className="flex justify-between"><span>Baby model:</span><span className="font-semibold">2-5 M VND</span></div>
+                            <div className="flex justify-between"><span>Props & safety:</span><span className="font-semibold">1-3 M VND</span></div>
+                            <div className="flex justify-between"><span>Studio setup:</span><span className="font-semibold">1-2 M VND</span></div>
+                            <div className="border-t pt-3 flex justify-between text-lg"><span className="font-bold">Total:</span><span className="font-bold text-red-600">9-22 M VND</span></div>
                           </>
                         )}
                         {industryFilter === 'other' && (
                           <>
-                            <div className="flex justify-between"><span>Product photographer:</span><span className="font-semibold">3-10 triệu/buổi</span></div>
-                            <div className="flex justify-between"><span>Studio & equipment:</span><span className="font-semibold">1-3 triệu</span></div>
+                            <div className="flex justify-between"><span>Product photographer:</span><span className="font-semibold">3-10 M VND/session</span></div>
+                            <div className="flex justify-between"><span>Studio & equipment:</span><span className="font-semibold">1-3 M VND</span></div>
                             <div className="flex justify-between"><span>Post-processing:</span><span className="font-semibold">500k-2M</span></div>
                             <div className="flex justify-between"><span>Retouching:</span><span className="font-semibold">500k-1M</span></div>
-                            <div className="border-t pt-3 flex justify-between text-lg"><span className="font-bold">Tổng:</span><span className="font-bold text-red-600">5-16 triệu</span></div>
+                            <div className="border-t pt-3 flex justify-between text-lg"><span className="font-bold">Total:</span><span className="font-bold text-red-600">5-16 M VND</span></div>
                           </>
                         )}
                       </div>
@@ -686,11 +686,11 @@ export default function EnhancedPricingPlans({
                     <div className="bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-xl p-6 shadow-lg">
                       <h4 className="font-bold mb-4 text-xl">SnapStudio AI</h4>
                       <div className="space-y-3">
-                        <div className="flex justify-between"><span>Upload ảnh:</span><span className="font-semibold">5 giây</span></div>
-                        <div className="flex justify-between"><span>AI processing:</span><span className="font-semibold">30 giây</span></div>
-                        <div className="flex justify-between"><span>12 ảnh đa style:</span><span className="font-semibold">Tức thì</span></div>
-                        <div className="flex justify-between"><span>Chi phí:</span><span className="font-semibold">120 pts (~12k VND)</span></div>
-                        <div className="border-t border-white/20 pt-3 flex justify-between text-lg"><span className="font-bold">Tổng:</span><span className="font-bold text-green-300">35 giây, 12k VND</span></div>
+                        <div className="flex justify-between"><span>Upload ảnh:</span><span className="font-semibold">5 seconds</span></div>
+                        <div className="flex justify-between"><span>AI processing:</span><span className="font-semibold">30 seconds</span></div>
+                        <div className="flex justify-between"><span>12 multi-style images:</span><span className="font-semibold">Tức thì</span></div>
+                        <div className="flex justify-between"><span>Cost:</span><span className="font-semibold">120 pts (~12k VND)</span></div>
+                        <div className="border-t border-white/20 pt-3 flex justify-between text-lg"><span className="font-bold">Total:</span><span className="font-bold text-green-300">35 seconds, 12k VND</span></div>
                       </div>
                     </div>
                   </div>
@@ -703,7 +703,7 @@ export default function EnhancedPricingPlans({
                       </p>
                     </div>
                     <p className="text-green-100">
-                      Từ hàng triệu VND xuống chỉ 12k VND cho 12 ảnh chuyên nghiệp
+                      Từ hàng M VND VND xuống chỉ 12k VND cho 12 ảnh chuyên nghiệp
                     </p>
                   </div>
                 </div>

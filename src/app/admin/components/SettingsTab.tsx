@@ -35,14 +35,14 @@ export function SettingsTab() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Cấu hình thanh toán</h3>
+            <h3 className="text-lg font-semibold mb-4">Payment Configuration</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium mb-2">Tỷ giá USD/VND</label>
+                <label className="block text-sm font-medium mb-2">USD/VND Exchange Rate</label>
                 <Input type="number" defaultValue="26400" />
               </div>
               <div>
-                <label className="block text-sm font-medium mb-2">Phí xử lý (%)</label>
+                <label className="block text-sm font-medium mb-2">Processing Fee (%)</label>
                 <Input type="number" defaultValue="3" />
               </div>
             </div>
@@ -50,7 +50,7 @@ export function SettingsTab() {
 
           <Button>
             <Save className="w-4 h-4 mr-2" />
-            Lưu cài đặt
+            Save Settings
           </Button>
         </div>
       </CardContent>

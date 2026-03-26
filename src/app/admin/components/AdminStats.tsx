@@ -16,19 +16,19 @@ interface AdminStatsProps {
 export function AdminStats({ stats }: AdminStatsProps) {
   const statItems = [
     {
-      label: 'Người dùng',
+      label: 'Users',
       value: stats.totalUsers,
       icon: Users,
       color: 'text-blue-600'
     },
     {
-      label: 'Ảnh đã tạo',
+      label: 'Images Created',
       value: stats.totalImages,
       icon: Image,
       color: 'text-green-600'
     },
     {
-      label: 'Đơn hàng',
+      label: 'Orders',
       value: stats.totalOrders,
       icon: ShoppingCart,
       color: 'text-orange-600'
